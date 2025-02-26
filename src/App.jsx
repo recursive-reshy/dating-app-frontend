@@ -11,13 +11,14 @@ import './App.css'
 
 import theme from './theme'
 
+import { Header } from './components'
+
 function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div>
-        <h1>Dating App</h1>
-      </div>
+      <Header />
+      <h1>Dating App</h1>
     </ThemeProvider>
   )
 }
