@@ -29,7 +29,7 @@ const Header = () => {
 	const { classes } = useStyles()
 
   return (
-    <AppBar>
+    <AppBar position="static">
 			<Toolbar>
 				<img
 					className={classes.headerLogo}
