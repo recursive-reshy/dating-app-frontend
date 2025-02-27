@@ -14,6 +14,11 @@ const useStyles = makeStyles()( theme => ( {
 		swipe: {
 			position: 'absolute',
 		},
+		container: {
+			display: 'flex',
+			justifyContent: 'center',
+			marginTop: 40,
+		},
 		card: {
 			position: 'relative',
 			margin: 'auto',
@@ -41,27 +46,29 @@ const DatingCard = () => {
 
   return (
 		<div>
-			{ people.map( ( { name, imgUrl }, index ) => (
-				<TinderDatingCard
-					key={name}
-					className={classes.swipe}
-					preventSwipe={ [ 'up', 'down' ] }
-					onSwipe={ ( direction ) => console.log( 'To delete', { direction, name } ) }
-					onCardLeftScreen={ () => console.log( 'Left the screen', { name } ) }
-				>
-					<Card className={classes.card}>
-						<CardMedia
-							sx={ { height: '100%', width: '100%' } }
-							component="img"
-							image={imgUrl}
-						/>
-						<CardContent>
-							<Typography variant="h5">{ name }</Typography>
-						</CardContent>
-					</Card>
-				</TinderDatingCard>
-				) ) 
-			}
+			<div className={classes.container}>	
+				{ people.map( ( { name, imgUrl }, index ) => (
+					<TinderDatingCard
+						key={name}
+						className={classes.swipe}
+						preventSwipe={ [ 'up', 'down' ] }
+						onSwipe={ ( direction ) => console.log( 'To delete', { direction, name } ) }
+						onCardLeftScreen={ () => console.log( 'Left the screen', { name } ) }
+					>
+						<Card className={classes.card}>
+							<CardMedia
+								sx={ { height: '100%', width: '100%' } }
+								component="img"
+								image={imgUrl}
+							/>
+							<CardContent>
+								<Typography variant="h5">{ name }</Typography>
+							</CardContent>
+						</Card>
+					</TinderDatingCard>
+					) ) 
+				}
+			</div>
 		</div>
   )
 }
