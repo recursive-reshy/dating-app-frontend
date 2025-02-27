@@ -7,7 +7,7 @@ import './App.css'
 
 import theme from './theme'
 
-import { Header, DatingCard } from './components'
+import { Header, DatingCard, SwipeButtons } from './components'
 
 function App() {
 
@@ -16,6 +16,7 @@ function App() {
       <div>
         <Header />
         <DatingCard />
+        <SwipeButtons />
       </div>
     </ThemeProvider>
   )
